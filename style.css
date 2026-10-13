@@ -1,0 +1,315 @@
+/* ==========================================================
+   Personal Portfolio - style.css
+   Themes are driven by CSS variables. script.js changes the
+   data-theme attribute on <html>, and the variables below
+   re-resolve, restyling the whole page instantly.
+   ========================================================== */
+
+/* ---------- Theme variables ---------- */
+:root,
+[data-theme="light"] {
+  --bg: #f7f7fb;
+  --bg-alt: #ececf6;
+  --surface: #ffffff;
+  --text: #1c1c28;
+  --muted: #5b5b70;
+  --accent: #4f46e5;
+  --accent-text: #ffffff;
+  --border: #d9d9e8;
+}
+
+[data-theme="dark"] {
+  --bg: #0f1020;
+  --bg-alt: #161830;
+  --surface: #1d2040;
+  --text: #ececf8;
+  --muted: #a3a6c8;
+  --accent: #8b8bff;
+  --accent-text: #0f1020;
+  --border: #2d3160;
+}
+
+
+/* ---------- Reset & base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: var(--accent); }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
+
+/* ---------- Header / Navbar ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease;
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--text);
+}
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+.nav-links a:hover { color: var(--accent); }
+
+.theme-toggle,
+.menu-toggle {
+  font: inherit;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.theme-toggle:hover,
+.menu-toggle:hover { background: var(--border); }
+.theme-toggle:active { transform: scale(0.96); }
+
+.menu-toggle { display: none; font-size: 1.2rem; padding: 0.3rem 0.7rem; }
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 4rem 1.25rem;
+  transition: background 0.3s ease;
+}
+.section.alt { background: var(--bg-alt); }
+
+.section > h2,
+.section > .about,
+.section > .skills-grid,
+.section > .projects-grid,
+.section > .hobbies,
+.section > .contact-form {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section > h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.section > h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-top: 0.4rem;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 6rem 1.25rem 5rem;
+}
+.hero .eyebrow { color: var(--accent); font-weight: 600; margin: 0; }
+.hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0.2em 0; }
+.tagline { max-width: 560px; margin: 0 auto 1.8rem; color: var(--muted); font-size: 1.15rem; }
+
+.btn {
+  display: inline-block;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--accent);
+  color: var(--accent-text);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.6rem;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+.btn:hover { opacity: 0.88; }
+.btn:active { transform: scale(0.97); }
+
+/* ---------- About ---------- */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.about-photo {
+  flex-shrink: 0;
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--accent);
+  background: var(--surface);
+}
+.about-text p { margin: 0 0 1em; }
+
+/* ---------- Skills ---------- */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.skill-card {
+  flex: 1 1 calc(33.333% - 1.25rem);
+  min-width: 220px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.skill-card:hover { transform: translateY(-4px); }
+.skill-card h3 { color: var(--accent); margin-bottom: 0.3em; }
+.skill-card p { margin: 0; color: var(--muted); }
+
+/* ---------- Projects ---------- */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.project-card {
+  flex: 1 1 calc(50% - 1.5rem);
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.project-card:hover { transform: translateY(-4px); }
+.project-tag {
+  align-self: flex-start;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+.project-card p { color: var(--muted); flex-grow: 1; }
+.project-link { font-weight: 600; text-decoration: none; }
+.project-link:hover { text-decoration: underline; }
+
+
+
+/* ---------- Contact form ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px !important;
+  margin-left: 0 !important;
+}
+@media (min-width: 1100px) {
+  .contact-form { margin-left: auto !important; }
+}
+.contact-form label { font-weight: 600; margin: 1rem 0 0.35rem; }
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  transition: border-color 0.2s ease, background 0.3s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+.contact-form input.invalid,
+.contact-form textarea.invalid { border-color: #d62839; }
+.contact-form .btn { margin-top: 1.5rem; align-self: flex-start; }
+.form-status { min-height: 1.5em; margin: 0.8rem 0 0; font-weight: 500; }
+.form-status.error { color: #d62839; }
+.form-status.success { color: #1b9e5a; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.25rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+.site-footer p { margin: 0 0 0.6rem; }
+.footer-links { display: flex; justify-content: center; gap: 1.5rem; }
+
+/* ==========================================================
+   Responsive (mobile-first adjustments via media queries)
+   ========================================================== */
+@media (max-width: 900px) {
+  .skill-card { flex-basis: calc(50% - 1.25rem); }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: inline-block; }
+
+  .navbar { flex-wrap: wrap; }
+
+  .nav-links {
+    display: none;
+    order: 4;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0.5rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 0.7rem 0; border-top: 1px solid var(--border); }
+
+  .about { flex-direction: column; text-align: center; }
+  .about-photo { width: 180px; height: 180px; }
+
+  .project-card { flex-basis: 100%; }
+  .section { padding: 3rem 1rem; }
+  .hero { padding: 4rem 1rem 3rem; }
+}
+
+@media (max-width: 480px) {
+  .skill-card { flex-basis: 100%; }
+  .theme-toggle #theme-label { display: none; }
+  .contact-form .btn { align-self: stretch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

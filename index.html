@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Your Name - student developer.">
+  <title>Tareq Dahbour | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVBAR ============ -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#top" class="logo">YourName<span>.</span></a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme">
+        <span id="theme-icon" aria-hidden="true">&#9728;</span>
+        <span id="theme-label">Light</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>Tariq Dahboor</h1>
+      <p class="tagline">Fresh Computer Science Graguate.</p>
+      <a href="#projects" class="btn">See my work</a>
+    </section>
+
+    <!-- ============ ABOUT ME ============ -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <div class="about">
+        <img src="assets/avatar.jpg" alt="Portrait of Your Name" class="about-photo" width="240" height="240">
+        <div class="about-text">
+          <p>
+            Hi! I'm a student passionate about software development. I started programming
+            because I loved the idea of turning an idea into something people can actually use.
+          </p>
+          <p>
+            Right now I'm learning how the web works from the ground up: semantic HTML, modern CSS
+            layouts, and JavaScript. I enjoy solving problems, reading other people's code, and
+            sharing what I learn.
+          </p>
+          <p>
+            <strong>Goal:</strong> become a well-rounded engineer who writes clean, accessible and
+            maintainable code.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS GRID ============ -->
+    <section id="skills" class="section alt">
+      <h2>Skills</h2>
+      <ul class="skills-grid">
+        <li class="skill-card"><h3>Coding</h3><p>Small coding knowlage from a multiple programming languages</p></li>
+        <li class="skill-card"><h3>Problem Solving</h3><p>Breaking big tasks into small steps</p></li>
+      </ul>
+    </section>
+
+    <!-- ============ PROJECT SHOWCASE (Projects 00-03) ============ -->
+    <section id="projects" class="section">
+      <h2>42 Web Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <span class="project-tag">Project 00</span>
+          <h3>Project00</h3>
+          <p>Learning about some linux commands</p>
+          <a href="#" class="https://github.com/TareqDahbour/discovery-web">View project &rarr;</a>
+        </article>
+        <article class="project-card">
+          <span class="project-tag">Project 01</span>
+          <h3>Project01</h3>
+          <p>Some basic HTML codes</p>
+          <a href="#" class="https://github.com/TareqDahbour/project01">View project &rarr;</a>
+        </article>
+        <article class="project-card">
+          <span class="project-tag">Project 02</span>
+          <h3>Project02</h3>
+          <p>Some basic CSS codes</p>
+          <a href="#" class="https://github.com/TareqDahbour/project02">View project &rarr;</a>
+        </article>
+        <article class="project-card">
+          <span class="project-tag">Project03</span>
+          <h3>Some basic java script codes</h3>
+          <p>Short description: what it does, what you built, and what you learned.</p>
+          <a href="#" class="https://github.com/TareqDahbour/project03">View project &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT FORM ============ -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <form id="contact-form" class="contact-form" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Say hello..." required></textarea>
+
+        <button type="submit" class="btn">Send message</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Your Name. Built by hand with HTML, CSS and JavaScript.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/TareqDahbour" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://jo.linkedin.com/in/tareq-dahbour-7219033a2" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:tatadah7@gmail.com">Email</a></li>
+      <li><a href="+962787053160">+962787053160</a></li>
+    </ul>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
